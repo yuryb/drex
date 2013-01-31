@@ -5,7 +5,7 @@ drex
 Dynamic version of Node's require() - loads fresh copy of the module every time the module file is changed.
 
 Insanely simple, and/but astonishingly useful grab of bits, which has been brought to this world out of severe necessity.
-Here is why:
+>Here is why:
 - all re-loaders I was able to find reload a node process, which means that the context of the process is gone and re-created;
 - but, sometimes, you don't want that! You want your process to continue running intact, at least for those clients who laready deep in it, and would choke if process forgets about them;
 - sometime you have a little (or BIG) piece of code which you constantly twick and, for G-d sake, do not want to sacrifice the whole your Node process for, but
