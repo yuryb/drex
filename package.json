@@ -1,0 +1,8 @@
+{
+  "name": "drex",
+  "version": "0.0.12",
+  "dependencies": {
+    "fs-extra": "",
+    "node-uuid": ""
+  }
+}
