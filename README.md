@@ -21,10 +21,10 @@ var drex = require('drex');
 // here goes my frea[ky/quently updated] piece of code, which lives in a js file called mucode.js:
 drex.require('./mucode.js', function(mucode)
 {
-  // at this point my mucode.js has been required, just like this: 
+  // at this point my mucode.js has been require()d, just like this: 
   // var mucode = require('./mucode.js');
-  // but what has been required - is the LATEST UPDATE TO mucode.js
-  mucode.muFunc();  
+  // the code of the required module is the LATEST UPDATE TO mucode.js
+  mucode.muNewFunc();  
 });
 ```
 
