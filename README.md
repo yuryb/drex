@@ -31,8 +31,6 @@ drex.require('./mucode.js', function(mucode)
 #Here is an example (and the reason I had to comeup with drex) from the real life when drex is irreplaceable:#
 frequently updated/added socket.io event handlers:
 
-when you have a code like this:
-
 ```javascript
 io.sockets.on('connection', function (socket) {
   // I need to do many things here, and these things change all the time!
