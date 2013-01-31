@@ -35,7 +35,7 @@ frequently updated/added socket.io event handlers:
 io.sockets.on('connection', function (socket) {
   // I need to do many things here, and these things change all the time!
   // If I use something like "forever", or "supervisor" to re-start my Node process every time 
-  // when things here should change, all existing sessions with the clients will be killed!
+  // when things here should change, all active sessions will be killed!
   // Oh, no, no, no!
   // All I want to do here, most of the time, is to put new event handler, which existing sessions do not even know about!
   
