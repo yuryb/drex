@@ -1,34 +1,21 @@
 {
-    "name": "drex",
-    "description": "drex - 'dynamic require() extension'. Dynamic version of Node's require() - loads fresh copy of the module every time the module file is changed.",
-    "version": "0.1.2",
-    "homepage" : "https://github.com/yuryb/drex",
-    "engines": {"node": ">= 0.6.15"},
-
-    "author": {
-        "name": "Yury Bogom",
-        "email": "drex@yury.com"
-    },
-
-    "dependencies": {
-        "fs-extra": "",
-        "node-uuid": ""
-    },
-
-    "engines": [
-        "node >= 0.3.6"
-    ],
-
-    "scripts": {
-        "test": "node example/app.js"
-    },
-
-    "repository" : {
-        "type" : "git",
-        "url" : "git://github.com/yuryb/drex.git"
-    },
-    "licenses": [{
-        "type": "GPL",
-        "url": "http://www.gnu.org/licenses/gpl-3.0.txt"
-    }]
+  "name": "drex",
+  "version": "0.1.2",
+  "description": "drex - [dynamic require() extension]. Dynamic version of Node require() - loads fresh copy of the module every time the module file is changed.",
+  "main": "drex.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "node example/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuryb/drex"
+  },
+  "keywords": [
+    "require"
+  ],
+  "author": "Yury Bogom <drex@yury.com> (http://cloudebug.com/)",
+  "license": "GPL"
 }
