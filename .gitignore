@@ -6,7 +6,7 @@ lib-cov
 *.out
 *.pid
 *.gz
-.gitignore
+.DS_Store
 
 pids
 logs
