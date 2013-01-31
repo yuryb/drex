@@ -47,10 +47,16 @@ io.sockets.on('connection', function (socket) {
       // code which existed in my module when these sessions were created. That's fair!
   });
 ```
-#Installation#
+#Installation using NPM#
 `
 npm install drex
 `
+#Even more simple installation#
+Just copy `drex.js` to the place where `require('drex')` would find it, for instance - to the root of your Node project.
+
+In case you are not using NPM, there are 2 dependencies that you have to resolve:
+- fs-extra (npm install fs-extra)
+- node-uuid (npm install node-uuid)
 
 #TL;DR;#
 `drex` is watching a module for updates and cleanly re-requires the module after the update.
