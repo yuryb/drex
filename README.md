@@ -54,8 +54,7 @@ npm install drex
 #Even more simple installation#
 Just copy `drex.js` to the place where `require('drex')` would find it, for instance - to the root of your Node project.
 
-In case you are not using NPM, there are 2 dependencies that you have to resolve:
-- fs-extra (npm install fs-extra)
+In case you are not using NPM, there is 1 dependency that you have to resolve:
 - node-uuid (npm install node-uuid)
 
 #TL;DR;#
