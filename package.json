@@ -1,8 +1,22 @@
 {
-  "name": "drex",
-  "version": "0.0.12",
-  "dependencies": {
-    "fs-extra": "",
-    "node-uuid": ""
-  }
+    "name": "drex",
+    "description": "drex - 'dynamic require() extension'. Dynamic version of Node's require() - loads fresh copy of the module every time the module file is changed.",
+    "version": "0.1.2",
+    "homepage" : "https://github.com/yuryb/drex",
+    "engines": {"node": ">= 0.6.15"},
+    "author": "Yury Bogom <drex@yury.com>",
+
+    "dependencies": {
+        "fs-extra": "",
+        "node-uuid": ""
+    },
+
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/yuryb/drex.git"
+    },
+    "licenses": [{
+        "type": "GPL",
+        "url": "http://www.gnu.org/licenses/gpl-3.0.txt"
+    }]
 }
