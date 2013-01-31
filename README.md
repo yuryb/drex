@@ -37,7 +37,8 @@ io.sockets.on('connection', function (socket) {
   // If I use something like "forever", or "supervisor" to re-start my Node process every time 
   // when things here should change, all active sessions will be killed!
   // Oh, no, no, no!
-  // All I want to do here, most of the time, is to put new event handler, which existing sessions do not even know about!
+  // All I want to do here, most of the time, is to put new event handler, which existing sessions 
+  // do not even know about!
   
   drex.require('./my_module_with_event_handlers_which_I_always_change.js', function(mymod) {
       // here I can start calling methods from my module like there is no tomorrow!
