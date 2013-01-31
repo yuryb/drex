@@ -1,10 +1,14 @@
 {
   "name": "drex",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "drex - [dynamic require() extension]. Dynamic version of Node require() - loads fresh copy of the module every time the module file is changed.",
   "main": "drex.js",
   "directories": {
     "example": "example"
+  },
+  "dependencies": {
+  "fs-extra": "",
+	"node-uuid": ""
   },
   "scripts": {
     "test": "node example/app.js"
