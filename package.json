@@ -6,9 +6,6 @@
   "directories": {
     "example": "example"
   },
-  "dependencies": {
-    "node-uuid": ""
-  },
   "scripts": {
     "test": "node example/app.js"
   },
