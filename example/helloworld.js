@@ -1,5 +1,5 @@
 exports.say = function(res) {
-    var changeme = 'Hello world';   // keep changing this var, and see different responses coming from this module
+    var changeme = 'Hello world!!!!!!';   // keep changing this var, and see different responses coming from this module
     
-    res.write(changeme);
+    res.end(changeme);
 }    
