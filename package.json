@@ -4,11 +4,23 @@
     "version": "0.1.2",
     "homepage" : "https://github.com/yuryb/drex",
     "engines": {"node": ">= 0.6.15"},
-    "author": "Yury Bogom <drex@yury.com>",
+
+    "author": {
+        "name": "Yury Bogom",
+        "email": "drex@yury.com"
+    },
 
     "dependencies": {
         "fs-extra": "",
         "node-uuid": ""
+    },
+
+    "engines": [
+        "node >= 0.3.6"
+    ],
+
+    "scripts": {
+        "test": "node example/app.js"
     },
 
     "repository" : {
