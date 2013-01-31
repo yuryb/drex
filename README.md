@@ -35,12 +35,26 @@ frequently updated/added socket.io event handlers:
 when you have a code like this:
 
 ```javascript
-io.sockets.on('connection', function (socket){
+io.sockets.on('connection', function (socket) {
   // I need to do many things here, and these things change all the time!
   // If I use something like "forever", or "supervisor" to re-start my Node process every time 
   // when things here should change, all existing sessions with the clients will be killed!
   // Oh, no, no, no!
   // All I want to do here usually is to put new event handler, which existing sessions do not even know about!
+  
+  drex.require('./my_module_with_event_handlers_which_I_always_twick.js', function(mymod) {
+      // here I can start calling methods from my module like there is no tomorrow!
+      // and I'm guaranteed that every time I update my module, sessions which will come after the update
+      // will get new code, but sessions which were opened before the update will still be working with the
+      // code which existed in my module when these sessions were created. That's fair!
+  });
+```
+
+TL;DR;
+drex is watching a module for updates and cleanly re-requires the module after update.
+New code is being required, as if the new code is a totally different module, so require.cache is not a problem.
+
+Enjoy
   
 }
 
