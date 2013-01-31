@@ -1,4 +1,3 @@
-var fs = require('fs-extra');
 var uuid = require('node-uuid');
 var mc = __dirname + '\\module_cache';
 var watchers = {};
@@ -46,15 +45,8 @@ var createModule = function(modname, cb)
 
     console.log('copying %s to %s', modname, mnm);
 
-    fs.copy(modname, mnm, function(err)
-    {
-        if (err)
-        {
-            console.error('error copying file: ' + err);
-        }
-        else
-        {
-            cb(mnm);
-        }
-    });
+    var content = fs.readFileSync(modname);
+    fs.writeFileSync(mnm, content);
+
+    cb(mnm);
 }
