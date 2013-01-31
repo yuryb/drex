@@ -19,7 +19,6 @@ var drex = require('drex');
 ... node code node code node code ...
 
 // here goes my frea[ky/quently updated] piece of code, which lives in a js file called mucode.js:
-
 drex.require('./mucode.js', function(mucode)
 {
   // at this point my mucode.js has been required, just like this: 
