@@ -1,7 +1,7 @@
 drex
 ====
 
-DREX - "dynamic require extension".
+`drex` - "dynamic require() extension".
 Dynamic version of Node's require() - loads fresh copy of the module every time the module file is changed.
 
 Insanely simple, but astonishingly useful grab of bits, which has been brought to this world out of severe necessity.
@@ -51,7 +51,7 @@ io.sockets.on('connection', function (socket) {
 ```
 
 #TL;DR;#
-drex is watching a module for updates and cleanly re-requires the module after update.
+`drex` is watching a module for updates and cleanly re-requires the module after update.
 New code is being required, as if the new code is a totally different module, so require.cache is not a problem.
 
 Enjoy
