@@ -49,7 +49,7 @@ io.sockets.on('connection', function (socket) {
 ```
 
 #TL;DR;#
-`drex` is watching a module for updates and cleanly re-requires the module after update.
-New code is being required, as if the new code is a totally different module, so require.cache is not a problem.
+`drex` is watching a module for updates and cleanly re-requires the module after the update.
+New code is being require()d as if the new code is a totally different module, so require.cache is not a problem.
 
 Enjoy
