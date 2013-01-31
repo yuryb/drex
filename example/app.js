@@ -1,5 +1,5 @@
 var http = require('http');
-var drex = require('../drex');
+var drex = require('drex');
 
 http.createServer(function (req, res) {
   drex.require('./helloworld.js', function(helloworld)
