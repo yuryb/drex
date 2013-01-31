@@ -11,7 +11,7 @@ Insanely simple, and/but astonishingly useful grab of bits, which has been broug
 - sometime you have a little (or BIG) piece of code which you constantly change and, for G-d sake, do not want to sacrifice the whole your Node process for, but
 - you don't want to loose the benefits of CommonJS/require supported modularity of your code.
 
-Here comes drex, and it comes like this:
+Here comes `drex`, and it comes like this:
 
 ```javascript
 var drex = require('drex');
