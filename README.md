@@ -6,10 +6,10 @@ Dynamic version of Node's require() - loads fresh copy of the module every time 
 
 Insanely simple, and/but astonishingly useful grab of bits, which has been brought to this world out of severe necessity.
 >Here is why:
-- all re-loaders I was able to find reload entirely node process, which means that the context of the process is gone and re-created;
-- but, sometimes, you don't want that! You want your process to continue running intact, at least for those clients who laready deep in it, and would choke if process forgets about them;
-- sometime you have a little (or BIG) piece of code which you constantly twick and, for G-d sake, do not want to sacrifice the whole your Node process for, but
-- you don't want to loose benefits of CommonJS/require supported modularity of your code.
+- all re-loaders I was able to find reload the whole node process, which means that the context of the process is gone;
+- but, sometimes, you don't want that! You want your process to continue running intact, at least for those clients who already deep in it, and would choke if process forgets about them;
+- sometime you have a little (or BIG) piece of code which you constantly change and, for G-d sake, do not want to sacrifice the whole your Node process for, but
+- you don't want to loose the benefits of CommonJS/require supported modularity of your code.
 
 Here comes drex, and it comes like this:
 
@@ -40,12 +40,12 @@ io.sockets.on('connection', function (socket) {
   // If I use something like "forever", or "supervisor" to re-start my Node process every time 
   // when things here should change, all existing sessions with the clients will be killed!
   // Oh, no, no, no!
-  // All I want to do here usually is to put new event handler, which existing sessions do not even know about!
+  // All I want to do here, most of the time, is to put new event handler, which existing sessions do not even know about!
   
-  drex.require('./my_module_with_event_handlers_which_I_always_twick.js', function(mymod) {
+  drex.require('./my_module_with_event_handlers_which_I_always_change.js', function(mymod) {
       // here I can start calling methods from my module like there is no tomorrow!
-      // and I'm guaranteed that every time I update my module, sessions which will come after the update
-      // will get new code, but sessions which were opened before the update will still be working with the
+      // and I'm guaranteed that every time I update my module, sessions which will come here after the update
+      // will get the new code, but sessions which were opened before the update will still be working with the
       // code which existed in my module when these sessions were created. That's fair!
   });
 ```
