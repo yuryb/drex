@@ -47,6 +47,10 @@ io.sockets.on('connection', function (socket) {
       // code which existed in my module when these sessions were created. That's fair!
   });
 ```
+#Installation#
+`
+npm install drex
+`
 
 #TL;DR;#
 `drex` is watching a module for updates and cleanly re-requires the module after the update.
