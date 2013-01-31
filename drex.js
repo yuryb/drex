@@ -1,4 +1,4 @@
-var uuid = require('node-uuid');
+var fs = require('fs');
 var mc = __dirname + '\\module_cache';
 var watchers = {};
 
@@ -41,7 +41,8 @@ exports.require = function(modname, cb)
 
 var createModule = function(modname, cb)
 {
-    var mnm = mc + '\\_mod' + '_' + uuid.v4() + '.js';
+    var dt = new Date();
+    var mnm = mc + '\\_mod' + '_' + dt.getTime() + '.js';
 
     console.log('copying %s to %s', modname, mnm);
 
