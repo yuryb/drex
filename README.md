@@ -63,5 +63,7 @@ In case you are not using NPM, there are 2 dependencies that you have to resolve
 New code is being require()d as if the new code is a totally different module, so require.cache is not a problem.
 
 #License#
-###GPL###
+GPL
+
+
 Enjoy
