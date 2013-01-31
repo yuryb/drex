@@ -7,8 +7,7 @@
     "example": "example"
   },
   "dependencies": {
-  "fs-extra": "",
-	"node-uuid": ""
+    "node-uuid": ""
   },
   "scripts": {
     "test": "node example/app.js"
