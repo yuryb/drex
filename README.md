@@ -6,13 +6,14 @@ Dynamic version of Node's require() - loads fresh copy of the module every time 
 
 Insanely simple, but astonishingly useful grab of bits, which has been brought to this world out of severe necessity.
 Here is why:
-• all re-loaders I was able to find reload a node process, which means that the context of the process is gone and re-created;
-• but, sometimes, you don't want that! You want your process to continue running intact, at least for those clients who laready deep in it, and would choke if process forgets about them;
-• sometime you have a little (or BIG) piece of code which you constantly twick and, for G-d sake, do not want to sacrifice the whole your Node process for, but
-• you don't want to loose benefits of CommonJS/require supported modularity of your code.
+- all re-loaders I was able to find reload a node process, which means that the context of the process is gone and re-created;
+- but, sometimes, you don't want that! You want your process to continue running intact, at least for those clients who laready deep in it, and would choke if process forgets about them;
+- sometime you have a little (or BIG) piece of code which you constantly twick and, for G-d sake, do not want to sacrifice the whole your Node process for, but
+- you don't want to loose benefits of CommonJS/require supported modularity of your code.
 
 Here comes drex, and it comes like this:
 
+```javascript
 var drex = require('drex');
 
 ... node code node code node code ...
@@ -21,6 +22,25 @@ var drex = require('drex');
 
 drex.require('./mucode.js', function(mucode)
 {
-  // at this point my mucode.js has been required, just like this: var mucode = require('./mucode.js');
+  // at this point my mucode.js has been required, just like this: 
+  // var mucode = require('./mucode.js');
+  // but what has been required - is the LATEST UPDATE TO mucode.js
   mucode.muFunc();  
 });
+```
+
+#Here is an example (and the reason I had to comeup with drex) from the real life when drex is irreplaceable:#
+frequently updated/added socket.io event handlers:
+
+when you have a code like this:
+
+```javascript
+io.sockets.on('connection', function (socket){
+  // I need to do many things here, and these things change all the time!
+  // If I use something like "forever", or "supervisor" to re-start my Node process every time 
+  // when things here should change, all existing sessions with the clients will be killed!
+  // Oh, no, no, no!
+  // All I want to do here usually is to put new event handler, which existing sessions do not even know about!
+  
+}
+
