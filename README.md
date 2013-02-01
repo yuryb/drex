@@ -52,7 +52,7 @@ io.sockets.on('connection', function (socket) {
 npm install drex
 `
 #Even more simple installation#
-Just copy `drex.js` to the place where `require('drex')` would find it, for instance - to the root of your Node project.
+Just copy `drex.js` to the place where Node can find it, i.e. for `require('./drex.js')` - to the root of your Node project.
 
 #TL;DR;#
 `drex` is watching a module for updates and cleanly re-requires the module after the update.
