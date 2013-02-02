@@ -48,7 +48,7 @@ io.sockets.on('connection', function (socket) {
   });
 ```
 #API#
-  `drex.require(<module reference>, <callBack>;`
+  `drex.require(<module reference>, <callBack>);`
   
   where:
   - `<module reference>` resolvable Node module reference, such as './module.js'
