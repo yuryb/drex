@@ -47,6 +47,17 @@ io.sockets.on('connection', function (socket) {
       // code which existed in my module when these sessions were created. That's fair!
   });
 ```
+#API#
+  `drex.require(<module reference>, <callBack>;`
+  
+  where:
+  - `<module reference>` resolvable Node module reference, such as './module.js'
+  - `<callBack>` function which is being called when the module has been `require()d`.
+    callBack signature: `callBack(module, filepath)`
+    where:
+    - `module`: reference to the require()d module, and
+    - '`filepath`: full path to the module's file
+
 #Installation using NPM#
 `
 npm install drex
