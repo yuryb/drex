@@ -53,10 +53,12 @@ io.sockets.on('connection', function (socket) {
   where:
   - `<module reference>` resolvable Node module reference, such as './module.js'
   - `<callBack>` function which is being called when the module has been `require()d`.
+    
     callBack signature: `callBack(module, filepath)`
+    
     where:
     - `module`: reference to the require()d module, and
-    - '`filepath`: full path to the module's file
+    - `filepath`: full path to the module's file
 
 #Installation using NPM#
 `
