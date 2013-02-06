@@ -1,5 +1,6 @@
 var fs = require('fs');
-var mc = __dirname + '\\module_cache';
+var path = require('path');
+var mc = path.join(__dirname, 'module_cache');
 var watchers = {};
 
 if (fs.existsSync(mc) == false)
@@ -42,7 +43,7 @@ exports.require = function(modname, cb)
 var createModule = function(modname, cb)
 {
     var dt = new Date();
-    var mnm = mc + '\\_mod' + '_' + dt.getTime() + '.js';
+    var mnm = path.join(mc,'_mod' + '_' + dt.getTime() + '.js');
 
     console.log('copying %s to %s', modname, mnm);
 
