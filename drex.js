@@ -8,8 +8,12 @@ if (! fs.existsSync(mc))
     fs.mkdirSync(mc);
 }
 
-exports.require = function(modname, cb)
+exports.require = function(modname, cb, errorCallback)
 {
+    errorCallback = errorCallback || function(e){
+        console.log(e)
+    };
+
     if (!watchers[modname])
     {
         var opts = {
@@ -22,14 +26,21 @@ exports.require = function(modname, cb)
             createModule(modname, function(mnm)
             {
                 watchers[modname] = mnm;
-
-                cb(require(mnm), mnm);
+                try {
+                    cb(require(mnm), mnm);
+                } catch (e) {
+                    errorCallback(e);
+                }
             })
         });
 
         watchers[modname] = modname;
     }
-    cb(require(path.resolve(watchers[modname])), watchers[modname]);
+    try {
+        cb(require(path.resolve(watchers[modname])), watchers[modname]);
+    } catch (e) {
+        errorCallback(e);
+    }
 }
 
 exports.unwatch = function(modname) {
