@@ -32,6 +32,12 @@ exports.require = function(modname, cb)
     cb(require(path.resolve(watchers[modname])), watchers[modname]);
 }
 
+exports.unwatch = function(modname) {
+    if (watchers[modname]) {
+        fs.unwatchFile(modname);
+    }
+}
+
 var createModule = function(modname, cb)
 {
     var dt = new Date();
